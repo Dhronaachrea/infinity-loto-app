@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.infinitylotoapp.viewmodels.HomeViewModel" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.HomeKenyaActivity">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/toolbar"
+                app:playerBalance="@={viewModel.playerBalance}"
+                app:playerName="@={viewModel.playerName}" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/colorHomeBackground"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="52"
+                            bind:cardBackgroundColor="@color/colorCardBackground1"
+                            bind:cardCornerRadius="0dp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llSabanzuriLotto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/blue_banner"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="7dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/icon_six_by_forty_two" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/tvSlAmountTag"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="7dp"
+                                        android:layout_marginBottom="1dp"
+                                        android:gravity="center"
+                                        android:text="@={viewModel.slAmountTag}"
+                                        android:textAllCaps="true"
+                                        android:textColor="#fefd00"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toTopOf="@+id/tvSlAmount"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        tools:ignore="TooDeepLayout" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/tvSlAmount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="7dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:gravity="center"
+                                        android:text="@={viewModel.slAmount}"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="15sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnSlPlay"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="25dp"
+                                        android:paddingEnd="25dp"
+                                        android:elevation="5dp"
+                                        android:layout_marginEnd="7dp"
+                                        android:text="@string/play_now"
+                                        app:backgroundTint="#ed145b"
+                                        app:layout_constraintBottom_toTopOf="@+id/tvSlAmountTag"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/clSlTimer" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:id="@+id/clSlTimer"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="#80000000"
+                                        android:orientation="horizontal"
+                                        android:paddingTop="6dp"
+                                        android:paddingBottom="6dp"
+                                        android:paddingStart="20dp"
+                                        android:paddingEnd="20dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvDaysSl"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@={viewModel.slDay}"
+                                            android:visibility="@{viewModel.isSlDayVisible()? View.VISIBLE : View.GONE}"
+                                            android:textColor="@color/colorWhite"
+                                            android:layout_marginEnd="10dp"
+                                            android:textSize="15sp"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintEnd_toStartOf="@+id/tvHoursSl"/>
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvHoursSl"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@={viewModel.slHour}"
+                                            android:textColor="@color/colorWhite"
+                                            android:layout_marginEnd="10dp"
+                                            android:textSize="15sp"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintStart_toEndOf="@+id/tvDaysSl"
+                                            app:layout_constraintEnd_toStartOf="@+id/tvMinutesSl"/>
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvMinutesSl"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@={viewModel.slMinute}"
+                                            android:textColor="@color/colorWhite"
+                                            android:layout_marginEnd="10dp"
+                                            android:textSize="15sp"
+                                            app:layout_constraintStart_toEndOf="@+id/tvHoursSl"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintEnd_toStartOf="@+id/tvSecondsSl"/>
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvSecondsSl"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@={viewModel.slSecond}"
+                                            android:textSize="15sp"
+                                            android:textColor="@color/colorWhite"
+                                            app:layout_constraintStart_toEndOf="@+id/tvMinutesSl"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent" />
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvDaysSlTag"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/d"
+                                            android:visibility="@{viewModel.isSlDayVisible()? View.VISIBLE : View.GONE}"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="12sp"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvDaysSl"
+                                            app:layout_constraintStart_toStartOf="@+id/tvDaysSl"
+                                            app:layout_constraintEnd_toEndOf="@+id/tvDaysSl"/>
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvHoursSlTag"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/h"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="12sp"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvHoursSl"
+                                            app:layout_constraintStart_toStartOf="@+id/tvHoursSl"
+                                            app:layout_constraintEnd_toEndOf="@+id/tvHoursSl"/>
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvMinutesSlTag"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/m"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="12sp"
+                                            app:layout_constraintStart_toStartOf="@+id/tvMinutesSl"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvMinutesSl"
+                                            app:layout_constraintEnd_toEndOf="@+id/tvMinutesSl"/>
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvSecondsSlTag"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/s"
+                                            android:textSize="12sp"
+                                            android:textColor="@color/colorWhite"
+                                            app:layout_constraintStart_toStartOf="@+id/tvSecondsSl"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvSecondsSl"
+                                            app:layout_constraintEnd_toEndOf="@+id/tvSecondsSl" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="48"
+                            card_view:cardCornerRadius="0dp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llLuckyTwelve"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/red_banner"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/icon_twelve_by_twenty_four" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvLtAmountTag"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="7dp"
+                                            android:layout_marginBottom="1dp"
+                                            android:gravity="center"
+                                            android:text="@={viewModel.ltAmountTag}"
+                                            android:textAllCaps="true"
+                                            android:textColor="#fefd00"
+                                            android:textSize="14sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintBottom_toTopOf="@+id/tvLtAmount"
+                                            app:layout_constraintEnd_toEndOf="parent" />
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/tvLtAmount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="7dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:gravity="center"
+                                            android:text="@={viewModel.ltAmount}"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="15sp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent" />
+
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/btnLtPlay"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingStart="25dp"
+                                            android:paddingEnd="25dp"
+                                            android:elevation="5dp"
+                                            android:layout_marginEnd="7dp"
+                                            android:text="@string/play_now"
+                                            app:backgroundTint="#ed145b"
+                                            app:layout_constraintBottom_toTopOf="@+id/tvLtAmountTag"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/clLtTimer" />
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:id="@+id/clLtTimer"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="#80000000"
+                                            android:orientation="horizontal"
+                                            android:paddingTop="6dp"
+                                            android:paddingBottom="6dp"
+                                            android:paddingStart="20dp"
+                                            android:paddingEnd="20dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <com.google.android.material.textview.MaterialTextView
+                                                android:id="@+id/tvDaysLt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@={viewModel.ltDay}"
+                                                android:visibility="@{viewModel.isLtDayVisible()? View.VISIBLE : View.GONE}"
+                                                android:textColor="@color/colorWhite"
+                                                android:layout_marginEnd="10dp"
+                                                android:textSize="15sp"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintEnd_toStartOf="@+id/tvHoursLt"/>
+
+                                            <com.google.android.material.textview.MaterialTextView
+                                                android:id="@+id/tvHoursLt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@={viewModel.ltHour}"
+                                                android:textColor="@color/colorWhite"
+                                                android:layout_marginEnd="10dp"
+                                                android:textSize="15sp"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintStart_toEndOf="@+id/tvDaysLt"
+                                                app:layout_constraintEnd_toStartOf="@+id/tvMinutesLt"/>
+
+                                            <com.google.android.material.textview.MaterialTextView
+                                                android:id="@+id/tvMinutesLt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@={viewModel.ltMinute}"
+                                                android:textColor="@color/colorWhite"
+                                                android:layout_marginEnd="10dp"
+                                                android:textSize="15sp"
+                                                app:layout_constraintStart_toEndOf="@+id/tvHoursLt"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintEnd_toStartOf="@+id/tvSecondsLt"/>
+
+                                            <com.google.android.material.textview.MaterialTextView
+                                                android:id="@+id/tvSecondsLt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@={viewModel.ltSecond}"
+                                                android:textSize="15sp"
+                                                android:textColor="@color/colorWhite"
+                                                app:layout_constraintStart_toEndOf="@+id/tvMinutesLt"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintEnd_toEndOf="parent" />
+
+                                            <com.google.android.material.textview.MaterialTextView
+                                                android:id="@+id/tvDaysLtTag"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/d"
+                                                android:visibility="@{viewModel.isLtDayVisible()? View.VISIBLE : View.GONE}"
+                                                android:textColor="@color/colorWhite"
+                                                android:textSize="12sp"
+                                                app:layout_constraintTop_toBottomOf="@+id/tvDaysLt"
+                                                app:layout_constraintStart_toStartOf="@+id/tvDaysLt"
+                                                app:layout_constraintEnd_toEndOf="@+id/tvDaysLt"/>
+
+                                            <com.google.android.material.textview.MaterialTextView
+                                                android:id="@+id/tvHoursLtTag"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/h"
+                                                android:textColor="@color/colorWhite"
+                                                android:textSize="12sp"
+                                                app:layout_constraintTop_toBottomOf="@+id/tvHoursLt"
+                                                app:layout_constraintStart_toStartOf="@+id/tvHoursLt"
+                                                app:layout_constraintEnd_toEndOf="@+id/tvHoursLt"/>
+
+                                            <com.google.android.material.textview.MaterialTextView
+                                                android:id="@+id/tvMinutesLtTag"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/m"
+                                                android:textColor="@color/colorWhite"
+                                                android:textSize="12sp"
+                                                app:layout_constraintStart_toStartOf="@+id/tvMinutesLt"
+                                                app:layout_constraintTop_toBottomOf="@+id/tvMinutesLt"
+                                                app:layout_constraintEnd_toEndOf="@+id/tvMinutesLt"/>
+
+                                            <com.google.android.material.textview.MaterialTextView
+                                                android:id="@+id/tvSecondsLtTag"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/s"
+                                                android:textSize="12sp"
+                                                android:textColor="@color/colorWhite"
+                                                app:layout_constraintStart_toStartOf="@+id/tvSecondsLt"
+                                                app:layout_constraintTop_toBottomOf="@+id/tvSecondsLt"
+                                                app:layout_constraintEnd_toEndOf="@+id/tvSecondsLt" />
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="-3dp"
+                    android:layout_weight="1"
+                    android:background="#f8b303"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/instant_games"
+                        android:textColor="#ae0001"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="1dp"
+                            android:layout_weight="1"
+                            app:cardUseCompatPadding="true"
+                            card_view:cardBackgroundColor="#f8b303"
+                            card_view:cardCornerRadius="10dp"
+                            card_view:cardElevation="4dp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llTreasureHunt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_margin="2dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/icon_treasure_hunt" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvTreasureHunt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/treasure_hunt"
+                                    android:textColor="@color/stratos"
+                                    android:textSize="12sp"
+                                    android:transitionName="@string/title_activity_transition" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="1dp"
+                            android:layout_weight="1"
+                            app:cardUseCompatPadding="true"
+                            card_view:cardBackgroundColor="#f8b303"
+                            card_view:cardCornerRadius="10dp"
+                            card_view:cardElevation="4dp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llTicTacToe"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_margin="2dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/icon_tic_tac_toe" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvTicTacToe"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/tic_tac_toe"
+                                    android:textColor="@color/stratos"
+                                    android:textSize="14sp"
+                                    android:transitionName="@string/title_activity_transition" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="2dp"
+                            android:layout_weight="1"
+                            app:cardUseCompatPadding="true"
+                            card_view:cardBackgroundColor="#f8b303"
+                            card_view:cardCornerRadius="10dp"
+                            card_view:cardElevation="4dp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llMoneyBee"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_margin="2dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/icon_money_bee" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvMoneyBee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/money_bee"
+                                    android:textColor="@color/stratos"
+                                    android:textSize="14sp"
+                                    android:transitionName="@string/title_activity_transition" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5" />
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="1dp"
+                            android:layout_weight="1"
+                            app:cardUseCompatPadding="true"
+                            card_view:cardBackgroundColor="#f8b303"
+                            card_view:cardCornerRadius="10dp"
+                            card_view:cardElevation="4dp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llBigFive"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_margin="2dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/icon_big_five" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvBigFive"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/big_five"
+                                    android:textColor="@color/stratos"
+                                    android:textSize="14sp"
+                                    android:transitionName="@string/title_activity_transition" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:cardUseCompatPadding="true"
+                            card_view:cardBackgroundColor="#f8b303"
+                            card_view:cardCornerRadius="10dp"
+                            card_view:cardElevation="4dp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llFunTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_margin="2dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/icon_fun_time" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvFunTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/fun_time"
+                                    android:textColor="@color/stratos"
+                                    android:textSize="14sp"
+                                    android:transitionName="@string/title_activity_transition" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <include
+            layout="@layout/drawer"
+            app:playerBalance="@={viewModel.playerBalance}"
+            app:playerName="@={viewModel.playerName}" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

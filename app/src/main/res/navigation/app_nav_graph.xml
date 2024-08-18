@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/gameListFragment">
+
+    <fragment
+        android:id="@+id/gameListFragment"
+        android:name="com.skilrock.infinitylotoapp.ui.fragment.GameListFragment"
+        android:label="@string/home" />
+
+    <fragment
+        android:id="@+id/fundTransferFragment"
+        android:name="com.skilrock.infinitylotoapp.ui.fragment.FundTransferFragment"
+        android:label="@string/fund_transfer" >
+
+        <action
+            android:id="@+id/action_fundTransferFragment_to_fundTransferAmountFragment"
+            app:destination="@id/fundTransferAmountFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.skilrock.infinitylotoapp.ui.fragment.MyProfileFragment"
+        android:label="@string/profile" >
+
+        <action
+            android:id="@+id/action_myProfileFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_myProfileFragment_to_myTransactionFragment"
+            app:destination="@id/myTransactionFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.skilrock.infinitylotoapp.ui.fragment.ChangePasswordFragment"
+        android:label="@string/change_password" />
+
+    <fragment
+        android:id="@+id/myTransactionFragment"
+        android:name="com.skilrock.infinitylotoapp.ui.fragment.MyTransactionFragment"
+        android:label="@string/my_transactions" />
+    <fragment
+        android:id="@+id/fundTransferAmountFragment"
+        android:name="com.skilrock.infinitylotoapp.ui.fragment.FundTransferAmountFragment"
+        android:label="FundTransferAmountFragment" >
+        <argument
+            android:name="machineId"
+            app:argType="string" />
+        <argument
+            android:name="merchantId"
+            app:argType="string" />
+        <argument
+            android:name="ipAddress"
+            app:argType="string" />
+    </fragment>
+</navigation>

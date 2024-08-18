@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.infinitylotoapp.viewmodels.AddNewAccountViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="10dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="?attr/colorDialogBackground"
+            android:orientation="vertical"
+            tools:context=".dialogs.ConfirmationDialog">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@drawable/bg_toolbar" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="40dp"
+                            android:contentDescription="@string/image"
+                            android:src="@drawable/add_new" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center"
+                            android:textAllCaps="true"
+                            android:textColor="?attr/colorDialogHeader"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilAccountHolderName"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColorHint="?attr/colorEditTextHint"
+                            app:boxStrokeColor="@color/edit_text_box_border"
+                            app:boxStrokeWidthFocused="1dp"
+                            app:errorTextAppearance="@style/edit_text_error_hint"
+                            app:hintTextAppearance="@style/edit_text_normal_hint"
+                            app:hintTextColor="?attr/colorEditTextHintFloat">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etAccountHolderName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:hint="@string/account_holder_name"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapWords"
+                                android:maxLength="25"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textAlignment="viewStart"
+                                android:textColor="?attr/colorEditTextFocusOutline"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilAccountNumber"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="?attr/colorEditTextHint"
+                            app:boxStrokeColor="@color/edit_text_box_border"
+                            app:boxStrokeWidthFocused="1dp"
+                            app:errorTextAppearance="@style/edit_text_error_hint"
+                            app:hintTextAppearance="@style/edit_text_normal_hint"
+                            app:hintTextColor="?attr/colorEditTextHintFloat">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etAccountNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/account_number"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLength="9"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textAlignment="viewStart"
+                                android:textColor="?attr/colorEditTextFocusOutline"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilOtp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            android:textColorHint="?attr/colorEditTextHint"
+                            app:boxStrokeColor="@color/edit_text_box_border"
+                            app:boxStrokeWidthFocused="1dp"
+                            app:errorTextAppearance="@style/edit_text_error_hint"
+                            app:hintTextAppearance="@style/edit_text_normal_hint"
+                            app:hintTextColor="?attr/colorEditTextHintFloat">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etOtp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/enter_otp"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLength="8"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textAlignment="viewStart"
+                                android:textColor="?attr/colorEditTextFocusOutline"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginBottom="30dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnCancel"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="60dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
+                                android:text="@string/cancel"
+                                android:textAllCaps="false"
+                                android:textColor="?attr/colorDialogButtonLight"
+                                android:textSize="16sp"
+                                android:theme="@style/Theme.MaterialComponents"
+                                app:cornerRadius="10dp"
+                                app:strokeColor="?attr/colorDialogButtonLight"
+                                app:strokeWidth="2dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnOk"
+                                style="@style/Widget.MaterialComponents.Button"
+                                android:layout_width="0dp"
+                                android:layout_height="60dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="?attr/colorDialogButtonLight"
+                                android:text="@string/ok"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="16sp"
+                                android:tag="FIRST_CALL"
+                                android:theme="@style/Theme.MaterialComponents"
+                                app:cornerRadius="10dp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </ScrollView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

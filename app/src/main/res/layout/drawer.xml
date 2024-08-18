@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="playerName"
+            type="String" />
+
+        <variable
+            name="playerBalance"
+            type="String" />
+
+    </data>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/drawer_header"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                tools:ignore="RtlSymmetry">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:elevation="12dp"
+                    app:cardCornerRadius="40dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivProfilePic"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/image"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvDrawerPlayerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@={playerName}"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="24sp" />
+
+                    <!--android:text="@={playerName}"-->
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvDrawerPlayerBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@={playerBalance}"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!--android:text="@={playerBalance}"-->
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/colorDrawerBackground"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llDrawerContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/drawer_menus_header"
+                            android:text="@string/my_account" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerMyProfile"
+                            style="@style/drawer_menus"
+                            android:text="@string/my_profile" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerMyTickets"
+                            style="@style/drawer_menus"
+                            android:text="@string/my_tickets" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerMyWallet"
+                            style="@style/drawer_menus"
+                            android:text="@string/my_wallet" />
+
+                        <View style="@style/drawer_separator"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerMyTransactions"
+                            style="@style/drawer_menus"
+                            android:text="@string/my_transactions" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerInbox"
+                            style="@style/drawer_menus"
+                            android:text="@string/inbox" />
+
+                        <View style="@style/drawer_separator"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerReferFriend"
+                            style="@style/drawer_menus"
+                            android:visibility="gone"
+                            android:text="@string/refer_a_friend" />
+
+                        <View style="@style/drawer_separator"
+                            android:visibility="gone"/>
+
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/drawer_menus_header"
+                            android:layout_marginTop="20dp"
+                            android:visibility="visible"
+                            android:text="@string/quick_links" />
+
+                        <View style="@style/drawer_separator"
+                            android:visibility="visible"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerDrawGameResults"
+                            style="@style/drawer_menus"
+                            android:visibility="visible"
+                            android:text="@string/draw_games_results" />
+
+                        <View style="@style/drawer_separator"
+                            android:visibility="visible"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerMyDrawGameTickets"
+                            style="@style/drawer_menus"
+                            android:visibility="gone"
+                            android:text="@string/my_draw_games_tickets" />
+
+                        <View style="@style/drawer_separator"
+                            android:visibility="gone"/>
+
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/drawer_menus_header"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/how_to_play_caps" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerHtpSabanzuriLotto"
+                            style="@style/drawer_menus"
+                            android:text="@string/sabanzuri_lotto_six_by_forty_two_small" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerHtpLuckyTwelve"
+                            style="@style/drawer_menus"
+                            android:text="@string/lucky_twelve_small" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerHtpTreasureHunt"
+                            style="@style/drawer_menus"
+                            android:text="@string/treasure_hunt_small" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerHtpTicTacToe"
+                            style="@style/drawer_menus"
+                            android:text="@string/tic_tac_toe_small" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerHtpMoneyBee"
+                            style="@style/drawer_menus"
+                            android:text="@string/money_bee_small" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerHtpBigFive"
+                            style="@style/drawer_menus"
+                            android:text="@string/big_five_small" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerHtpFunTime"
+                            style="@style/drawer_menus"
+                            android:text="@string/fun_time_small" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/drawer_menus_header"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/theme" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvThemeCaption"
+                                style="@style/drawer_menus"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:background="?attr/colorDrawerBackground"
+                                android:text="@string/switch_light_theme" />
+
+                            <com.github.angads25.toggle.widget.DayNightSwitch
+                                android:id="@+id/switchDayNight"
+                                android:layout_width="60dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="15dp"
+                                app:on="true"/>
+
+                            <!-- On -> True: Day
+                            On -> False: Night -->
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <View style="@style/drawer_separator" />
+
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/drawer_menus_header"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/more_links" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerFaq"
+                            style="@style/drawer_menus"
+                            android:text="@string/faq" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerResponsibleGaming"
+                            style="@style/drawer_menus"
+                            android:text="@string/responsible_gaming" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerTnc"
+                            style="@style/drawer_menus"
+                            android:text="@string/terms_conditions" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerPrivacyPolicy"
+                            style="@style/drawer_menus"
+                            android:text="@string/privacy_policy" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDrawerContactUs"
+                            style="@style/drawer_menus"
+                            android:text="@string/contact_us" />
+
+                        <View style="@style/drawer_separator" />
+
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llLogoutBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llDrawerChangePassword"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:background="@drawable/rounded_corners_left"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/icon_key_white"
+                                    android:contentDescription="@string/image" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="15sp"
+                                    android:layout_marginStart="15dp"
+                                    android:text="@string/change_password_break"/>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llDrawerLogout"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="1dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:background="@drawable/rounded_corners_right"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/icon_logout_white"
+                                    android:contentDescription="@string/image" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="16sp"
+                                    android:layout_marginStart="15dp"
+                                    android:text="@string/logout"/>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </ScrollView>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawer_footer_bg"
+                    android:contentDescription="@string/image" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDrawerVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:textColor="?attr/colorDrawerMenu"
+                    android:textSize="13sp"
+                    android:textStyle="italic" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</layout>

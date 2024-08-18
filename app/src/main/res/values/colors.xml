@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#002088</color>
+    <color name="colorPrimaryDark">#000947</color>
+    <color name="colorAccent">#002088</color>
+    <color name="pink_700">#CE1126</color>
+    <color name="button_color">#795548</color>
+    <color name="colorText">#795548</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorDarkGrey">#606060</color>
+    <color name="colorError">#e96262</color>
+    <color name="olivine">#93C17D</color>
+    <color name="colorLightGrey">#a5a5a5</color>
+    <color name="color_nav_state_checked">#6bb0ff</color>
+    <color name="midnight">#000F38</color>
+    <color name="pear">#CDDC39</color>
+    <color name="blue_zodiac">#112756</color>
+    <color name="solitude">#E1F2FF</color>
+    <color name="tangaroa">#010F38</color>
+    <color name="silver_chalice1">#A1A1A1</color>
+    <color name="alto">#DCDCDC</color>
+    <color name="persimmon">#FF5656</color>
+    <color name="selective_yellow">#FCB600</color>
+    <color name="stratos">#000947</color>
+    <color name="lilac">#BE85BE</color>
+
+    <color name="colorCardBackground1">#4600ae</color>
+</resources>

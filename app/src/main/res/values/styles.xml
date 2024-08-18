@@ -1,0 +1,210 @@
+<resources>
+
+    <!-- Base application theme. --> <!-- AppCompat --> <!-- MaterialComponents -->
+    <!--<style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">-->
+    <!--Theme.MaterialComponents.Light.DarkActionBar-->
+    <!--Theme.AppCompat.Light.DarkActionBar-->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorControlHighlight">@color/colorLightGrey</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <!--<color name="mtrl_textinput_default_box_stroke_color">#fff</color>-->
+        <!--<item name="colorControlNormal">#ff0000</item>
+        <item name="colorControlActivated">#00ff00</item>-->
+    </style>
+
+    <style name="edit_text_normal_hint">
+        <item name="android:textColor">?attr/colorEditTextHint</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="edit_text_error_hint">
+        <item name="android:textColor">@color/pink_700</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="drawer_menus">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorDrawerMenu</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:transitionName">@string/title_activity_transition</item>
+    </style>
+
+    <style name="drawer_menus_header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorDrawerMenuHeader</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="drawer_separator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?attr/colorDrawerSeparator</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DialogSheetStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~ DARK-LIGHT THEME ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <style name="DarkTheme" parent="AppTheme">
+        <item name="colorActivityBackground">@color/tangaroa</item>
+
+        <item name="colorHomeBackground">@color/midnight</item>
+        <item name="colorHomeGameCategory">@color/pear</item>
+
+        <item name="colorProfileHeader">@color/blue_zodiac</item>
+        <item name="colorProfileDividerLine">#37414e</item>
+        <item name="colorProfileMenuText">@color/colorWhite</item>
+        <item name="colorProfileAmount">#cddc39</item>
+        <item name="colorProfileAmountTag">@color/colorWhite</item>
+        <item name="colorProfileText">@color/colorWhite</item>
+        <item name="colorProfilePlayerId">@color/selective_yellow</item>
+        <item name="colorProfileCard">#1c2950</item>
+
+        <item name="colorDrawerMenu">@color/colorWhite</item>
+        <item name="colorDrawerSeparator">#37414e</item>
+        <item name="colorDrawerBackground">#010f38</item>
+        <item name="colorDrawerMenuHeader">#fcb600</item>
+        <item name="colorDrawerLogoutBar">#6c7ba2</item>
+
+        <item name="colorDialogBackground">#010F38</item>
+        <item name="colorDialogButtonLight">#1a67d5</item>
+        <item name="colorDialogButtonDark">#000947</item>
+        <item name="colorDialogHeader">#fcb600</item>
+        <item name="colorDialogMessage">@color/colorWhite</item>
+        <item name="colorDialogSoftMessage">@color/colorDarkGrey</item>
+
+        <item name="colorLoginDialogTitle">@color/colorWhite</item>
+        <item name="colorLoginDialogButton">@color/colorWhite</item>
+
+        <item name="colorEditTextFocusOutline">@color/colorWhite</item>
+        <item name="colorEditTextFocusOutlineDisable">#6d7ba1</item>
+        <item name="colorEditTextWithoutFocusOutline">#6d7ba1</item>
+        <item name="colorEditTextHint">#676767</item>
+        <item name="colorEditTextHintFloat">#1a67d5</item>
+
+        <item name="colorMyTransactionDateBar">#213F74</item>
+        <item name="colorSearchBar">#142646</item>
+        <item name="colorMyTransactionProceedButton">#ff8000</item>
+        <item name="colorMyTransactionAmount">#cddc39</item>
+        <item name="colorMyTransactionType">#fcb600</item>
+        <item name="colorMyTransactionParticulars">@color/colorWhite</item>
+        <item name="colorMyTransactionText">#cccccc</item>
+
+        <item name="colorMyTicketGame">#fcb600</item>
+
+        <item name="colorMyWalletRowBackground">#010f38</item>
+        <item name="colorMyWalletTopMessageBg">#214074</item>
+        <item name="colorMyWalletTopMessageFg">@color/colorWhite</item>
+        <item name="colorMyWalletLeftButton">#6c7ba2</item>
+        <item name="colorMyWalletRightButton">#d30e24</item>
+        <item name="colorMyWalletIconBackground">#112756</item>
+        <item name="colorMyWalletTitleColor">#fcb600</item>
+        <item name="colorMyWalletSubTitleColor">#cccccc</item>
+        <item name="colorMyWalletCost">#ffffff</item>
+        <item name="colorMyWalletBottomSheetBg">#112756</item>
+        <item name="colorMyWalletBottomSheetTitle">#cddc39</item>
+        <item name="colorMyWalletBottomSheetSubText">#cccccc</item>
+        <item name="colorMyWalletBottomSheetText">#ffffff</item>
+        <item name="colorMyWalletBottomCount">#1E3B6F</item>
+        <item name="colorMyWalletBottomSheetAmount">#cddc39</item>
+
+        <item name="colorSelectionDialogText">#ffffff</item>
+        <item name="colorSelectedRow">#1a264b</item>
+    </style>
+
+    <style name="LightTheme" parent="AppTheme">
+        <item name="colorActivityBackground">@color/colorWhite</item>
+
+        <item name="colorHomeBackground">@color/colorWhite</item>
+        <item name="colorHomeGameCategory">@color/silver_chalice1</item>
+
+        <item name="colorProfileHeader">@color/solitude</item>
+        <item name="colorProfileDividerLine">@color/alto</item>
+        <item name="colorProfileMenuText">#707070</item>
+        <item name="colorProfileAmount">#000000</item>
+        <item name="colorProfileAmountTag">@color/silver_chalice1</item>
+        <item name="colorProfileText">@color/stratos</item>
+        <item name="colorProfilePlayerId">@color/stratos</item>
+        <item name="colorProfileCard">@color/solitude</item>
+
+        <item name="colorDrawerMenu">#010f38</item>
+        <item name="colorDrawerSeparator">@color/alto</item>
+        <item name="colorDrawerBackground">@color/colorWhite</item>
+        <item name="colorDrawerMenuHeader">#002088</item>
+        <item name="colorDrawerLogoutBar">#010f38</item>
+
+        <item name="colorDialogBackground">@color/colorWhite</item>
+        <item name="colorDialogButtonLight">#002088</item>
+        <item name="colorDialogButtonDark">#000947</item>
+        <item name="colorDialogHeader">#002088</item>
+        <item name="colorDialogMessage">@color/colorDarkGrey</item>
+        <item name="colorDialogSoftMessage">@color/colorLightGrey</item>
+
+        <item name="colorLoginDialogTitle">#000947</item>
+        <item name="colorLoginDialogButton">#000947</item>
+
+        <item name="colorEditTextFocusOutline">#002088</item>
+        <item name="colorEditTextFocusOutlineDisable">#676767</item>
+        <item name="colorEditTextWithoutFocusOutline">#676767</item>
+        <item name="colorEditTextHint">#676767</item>
+        <item name="colorEditTextHintFloat">#676767</item>
+
+        <item name="colorMyTransactionDateBar">#FBFBFB</item>
+        <item name="colorSearchBar">#eaeaea</item>
+        <item name="colorMyTransactionProceedButton">#002088</item>
+        <item name="colorMyTransactionAmount">#301df4</item>
+        <item name="colorMyTransactionType">@color/colorDarkGrey</item>
+        <item name="colorMyTransactionParticulars">#464646</item>
+        <item name="colorMyTransactionText">#808080</item>
+
+        <item name="colorMyTicketGame">#010f38</item>
+
+        <item name="colorMyWalletRowBackground">#f3f3f3</item>
+        <item name="colorMyWalletTopMessageBg">#ffffff</item>
+        <item name="colorMyWalletTopMessageFg">#606060</item>
+        <item name="colorMyWalletLeftButton">#999999</item>
+        <item name="colorMyWalletRightButton">#d30e24</item>
+        <item name="colorMyWalletIconBackground">#acacac</item>
+        <item name="colorMyWalletTitleColor">#112756</item>
+        <item name="colorMyWalletSubTitleColor">#606060</item>
+        <item name="colorMyWalletCost">#606060</item>
+        <item name="colorMyWalletBottomSheetBg">#ffffff</item>
+        <item name="colorMyWalletBottomSheetTitle">#214074</item>
+        <item name="colorMyWalletBottomSheetSubText">#606060</item>
+        <item name="colorMyWalletBottomSheetText">#606060</item>
+        <item name="colorMyWalletBottomCount">#e8e8e8</item>
+        <item name="colorMyWalletBottomSheetAmount">#12b132</item>
+
+        <item name="colorSelectionDialogText">#606060</item>
+        <item name="colorSelectedRow">#707070</item>
+    </style>
+
+</resources>

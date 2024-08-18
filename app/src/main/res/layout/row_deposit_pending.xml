@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCount"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:background="?attr/colorMyWalletBottomCount"
+            android:textColor="?attr/colorMyWalletBottomSheetSubText"
+            android:textSize="14sp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorMyWalletBottomSheetSubText"
+                    android:textStyle="italic"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/txn_id" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTxnId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorMyWalletBottomSheetText"
+                    android:textStyle="bold|italic"
+                    android:textSize="16sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorMyWalletBottomSheetSubText"
+                android:textStyle="italic"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorMyWalletBottomSheetAmount"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="5dp" />
+        
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    
+    <View style="@style/drawer_separator"/>
+    
+</androidx.appcompat.widget.LinearLayoutCompat>

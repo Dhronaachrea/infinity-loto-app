@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="inboxData"
+            type="com.skilrock.infinitylotoapp.data_class.response_data_class.PlayerInboxResponseData.PlrInbox" />
+    </data>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/containerInboxRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorActivityBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="10dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="7dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:src="@drawable/ic_check" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvInboxSubject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="@{inboxData.subject}"
+                android:textColor="?attr/colorMyTicketGame"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvInboxDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:text="@{inboxData.getDateFormatted()}"
+                android:textColor="?attr/colorMyTransactionText"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_double_dots" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="?attr/colorDrawerSeparator" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="playerName"
+            type="String"/>
+
+        <variable
+            name="playerBalance"
+            type="String"/>
+
+    </data>
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_toolbar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDrawer"
+                android:layout_width="22dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:focusable="true"
+                android:gravity="center"
+                android:src="@drawable/drawer_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivToolBarLogo"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/sabanzuri_logo"
+                android:contentDescription="@string/image" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvToolBarTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/login_sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:theme="@style/Theme.MaterialComponents"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/colorWhite"
+                app:strokeWidth="1dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/toolbarPlayerInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvPlayerNameName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@={playerName}"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp"
+                        tools:ignore="SmallSp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvPlayerBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@={playerBalance}"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+</layout>

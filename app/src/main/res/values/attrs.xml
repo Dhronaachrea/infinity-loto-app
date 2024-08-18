@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorActivityBackground" format="color"/>
+
+    <attr name="colorHomeBackground" format="color"/>
+    <attr name="colorHomeGameCategory" format="color"/>
+
+    <attr name="colorProfileHeader" format="color"/>
+    <attr name="colorProfileDividerLine" format="color"/>
+    <attr name="colorProfileMenuText" format="color"/>
+    <attr name="colorProfileAmount" format="color"/>
+    <attr name="colorProfileAmountTag" format="color"/>
+    <attr name="colorProfileText" format="color|reference"/>
+    <attr name="colorProfilePlayerId" format="color"/>
+    <attr name="colorProfileCard" format="color"/>
+
+    <attr name="colorDrawerMenu" format="color"/>
+    <attr name="colorDrawerSeparator" format="color"/>
+    <attr name="colorDrawerBackground" format="color"/>
+    <attr name="colorDrawerMenuHeader" format="color"/>
+    <attr name="colorDrawerLogoutBar" format="color"/>
+
+    <attr name="colorDialogBackground" format="color"/>
+    <attr name="colorDialogButtonLight" format="color"/>
+    <attr name="colorDialogButtonDark" format="color"/>
+    <attr name="colorDialogHeader" format="color"/>
+    <attr name="colorDialogMessage" format="color"/>
+    <attr name="colorDialogSoftMessage" format="color"/>
+
+    <attr name="colorLoginDialogTitle" format="color"/>
+    <attr name="colorLoginDialogButton" format="color"/>
+
+    <attr name="colorEditTextFocusOutline" format="color"/>
+    <attr name="colorEditTextFocusOutlineDisable" format="color"/>
+    <attr name="colorEditTextWithoutFocusOutline" format="color"/>
+    <attr name="colorEditTextHint" format="color"/>
+    <attr name="colorEditTextHintFloat" format="color"/>
+
+    <attr name="colorMyTransactionDateBar" format="color"/>
+    <attr name="colorMyTransactionProceedButton" format="color"/>
+    <attr name="colorMyTransactionAmount" format="color"/>
+    <attr name="colorMyTransactionType" format="color"/>
+    <attr name="colorMyTransactionParticulars" format="color"/>
+    <attr name="colorMyTransactionText" format="color"/>
+
+    <attr name="colorMyTicketGame" format="color"/>
+
+    <attr name="colorMyWalletRowBackground" format="color"/>
+    <attr name="colorMyWalletTopMessageBg" format="color"/>
+    <attr name="colorMyWalletTopMessageFg" format="color"/>
+    <attr name="colorMyWalletLeftButton" format="color"/>
+    <attr name="colorMyWalletRightButton" format="color"/>
+    <attr name="colorMyWalletIconBackground" format="color"/>
+    <attr name="colorMyWalletTitleColor" format="color"/>
+    <attr name="colorMyWalletSubTitleColor" format="color"/>
+    <attr name="colorMyWalletCost" format="color"/>
+    <attr name="colorMyWalletBottomSheetBg" format="color"/>
+    <attr name="colorMyWalletBottomSheetTitle" format="color"/>
+    <attr name="colorMyWalletBottomSheetSubText" format="color"/>
+    <attr name="colorMyWalletBottomSheetText" format="color"/>
+    <attr name="colorMyWalletBottomCount" format="color"/>
+    <attr name="colorMyWalletBottomSheetAmount" format="color"/>
+
+    <attr name="colorSelectionDialogText" format="color"/>
+    <attr name="colorSearchBar" format="color"/>
+    <attr name="colorSelectedRow" format="color"/>
+</resources>

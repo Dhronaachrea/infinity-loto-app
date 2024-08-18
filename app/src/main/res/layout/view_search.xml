@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="?attr/colorSearchBar">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSearchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_your_message_here"
+            android:layout_marginEnd="10dp"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            android:textColor="?attr/colorMyTransactionText"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/open_search_button"/>
+
+        <View
+            android:id="@+id/open_search_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_search" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/searchOpenView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        android:background="@drawable/rounded_corner_background"
+        android:visibility="invisible">
+
+        <View
+            android:id="@+id/close_search_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/ic_close" />
+
+        <EditText
+            android:id="@+id/searchInputText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/search"
+            android:autofillHints="@string/message"
+            android:layout_toStartOf="@id/executeSearchButton"
+            android:layout_toEndOf="@id/close_search_button"
+            android:inputType="text" />
+
+        <View
+            android:id="@+id/executeSearchButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            android:background="@drawable/ic_send" />
+
+    </RelativeLayout>
+
+</FrameLayout>

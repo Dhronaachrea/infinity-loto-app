@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
+    android:background="@drawable/rounded_corners"
+    android:gravity="center"
+    android:layout_margin="30dp"
+    android:orientation="vertical"
+    tools:context="com.skilrock.infinitylotoapp.dialogs.AppVersionDialog">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/icon_success"
+        android:contentDescription="@string/image" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="15dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorDarkGrey"
+        android:layout_marginBottom="25dp"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLater"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:text="@string/update_later"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:theme="@style/Theme.MaterialComponents"
+            app:strokeColor="@color/colorPrimary"
+            app:strokeWidth="2dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpdate"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.Button"
+            android:textSize="14sp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/update_now"
+            android:textColor="@color/colorWhite"
+            android:theme="@style/Theme.MaterialComponents" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

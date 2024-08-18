@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="inboxViewModel"
+            type="com.skilrock.infinitylotoapp.viewmodels.InboxViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_without_login_option"
+            app:title="@{inboxViewModel.activityTitle}"
+            app:playerName="@={inboxViewModel.playerName}"
+            app:playerBalance="@={inboxViewModel.playerBalance}"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="?attr/colorActivityBackground"
+            tools:context="com.skilrock.infinitylotoapp.ui.activity.InboxActivity">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvInbox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingTop="8dp"
+                android:background="?attr/colorActivityBackground" />
+
+            <com.skilrock.infinitylotoapp.utility.SearchView
+                android:id="@+id/searchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llDeleteBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvSelectAll"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:background="?attr/colorSearchBar"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:textColor="?attr/colorMyTransactionText"
+                    android:text="@string/select_all" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDeleteSelected"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_marginStart="1dp"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:background="?attr/colorSearchBar"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:textColor="?attr/colorMyTransactionText"
+                    android:text="@string/delete_selected" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

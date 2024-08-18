@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.infinitylotoapp.viewmodels.GamePlayViewModel" />
+    </data>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="?attr/colorActivityBackground"
+        tools:context=".ui.activity.GamePlayKenyaActivity">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_toolbar"
+            android:paddingStart="15dp"
+            android:paddingEnd="5dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="22dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:contentDescription="@string/image"
+                android:focusable="true"
+                android:gravity="center"
+                android:src="@drawable/back_icon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvToolBarTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:transitionName="@string/title_activity_transition"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGamePlayLogin"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/login_sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:theme="@style/Theme.MaterialComponents"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/colorWhite"
+                app:strokeWidth="1dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/toolbarGamePlayPlayerInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvPlayerNameName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@={viewModel.playerName}"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp"
+                        tools:ignore="SmallSp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvPlayerBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@={viewModel.playerBalance}"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?attr/colorActivityBackground"
+            android:layout_weight="1"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/custom_progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:minHeight="6dp"
+            android:padding="0dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

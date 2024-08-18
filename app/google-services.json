@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1018793714141",
+    "project_id": "sabanzuri-lotto",
+    "storage_bucket": "sabanzuri-lotto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018793714141:android:dedfb244da19c4aa02d634",
+        "android_client_info": {
+          "package_name": "com.skilrock.infinitylotoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018793714141-c3tpbdfqdq3hlp9arplvho8sj1mid6hb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeXr1hofyXF0s7Thc88RpRTsVw1DT8jns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018793714141-c3tpbdfqdq3hlp9arplvho8sj1mid6hb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

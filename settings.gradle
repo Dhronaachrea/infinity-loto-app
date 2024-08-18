@@ -1,0 +1,2 @@
+rootProject.name='Infinity Loto App'
+include ':app'

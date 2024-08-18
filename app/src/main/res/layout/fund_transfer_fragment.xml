@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.infinitylotoapp.viewmodels.FundTransferViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.FundTransferFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="24sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/scan_qr_or_enter_id" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMachineId"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            app:errorTextAppearance="@style/edit_text_error_hint"
+            app:hintTextAppearance="@style/edit_text_normal_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMachineId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/machine_id"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:visibility="visible"
+            android:layout_weight="1">
+
+            <com.budiyev.android.codescanner.CodeScannerView
+                android:id="@+id/scannerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:autoFocusButtonColor="@color/button_color"
+                app:autoFocusButtonVisible="true"
+                app:flashButtonColor="@color/button_color"
+                app:flashButtonVisible="true"
+                app:frameColor="@color/colorWhite"
+                app:frameCornersSize="50dp"
+                app:frameCornersRadius="0dp"
+                app:frameAspectRatioWidth="1"
+                app:frameAspectRatioHeight="1"
+                app:frameSize="0.75"
+                app:frameThickness="2dp"
+                app:maskColor="#77000000"/>
+
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnProceed"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textSize="16sp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/proceed"
+            android:textColor="@color/colorWhite"
+            android:theme="@style/Theme.MaterialComponents"
+            style="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="30dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

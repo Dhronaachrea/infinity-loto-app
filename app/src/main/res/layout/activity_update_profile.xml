@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.infinitylotoapp.viewmodels.UpdateProfileViewModel" />
+    </data>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorActivityBackground"
+        android:orientation="vertical"
+        tools:context=".ui.activity.UpdateProfileActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar_without_login_option"
+            app:playerBalance="@={viewModel.playerBalance}"
+            app:playerName="@={viewModel.playerName}"
+            app:title="@{viewModel.activityTitle}" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilFirstName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="2dp"
+                    android:hint="@string/first_name"
+                    android:textColorHint="?attr/colorEditTextHint"
+                    app:boxStrokeColor="@color/edit_text_box_border"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:errorTextAppearance="@style/edit_text_error_hint"
+                    app:hintTextAppearance="@style/edit_text_normal_hint"
+                    app:hintTextColor="?attr/colorEditTextHintFloat">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:drawableStart="@drawable/icon_user"
+                        android:drawablePadding="10dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:text="@={viewModel.firstName}"
+                        android:textColor="?attr/colorEditTextFocusOutline"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilLastName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="2dp"
+                    android:hint="@string/last_name"
+                    android:textColorHint="?attr/colorEditTextHint"
+                    app:boxStrokeColor="@color/edit_text_box_border"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:errorTextAppearance="@style/edit_text_error_hint"
+                    app:hintTextAppearance="@style/edit_text_normal_hint"
+                    app:hintTextColor="?attr/colorEditTextHintFloat">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:drawableStart="@drawable/icon_user"
+                        android:drawablePadding="10dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:text="@={viewModel.lastName}"
+                        android:textColor="?attr/colorEditTextFocusOutline"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="2dp"
+                    android:hint="@string/prompt_email"
+                    android:textColorHint="?attr/colorEditTextHint"
+                    app:boxStrokeColor="@color/edit_text_box_border"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:errorTextAppearance="@style/edit_text_error_hint"
+                    app:hintTextAppearance="@style/edit_text_normal_hint"
+                    app:hintTextColor="?attr/colorEditTextHintFloat">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="10dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:text="@={viewModel.email}"
+                        android:textColor="?attr/colorEditTextFocusOutline"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDob"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="2dp"
+                    android:focusable="false"
+                    android:hint="@string/date_of_birth"
+                    android:textColorHint="?attr/colorEditTextHint"
+                    app:boxStrokeColor="@color/edit_text_box_border"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:errorTextAppearance="@style/edit_text_error_hint"
+                    app:hintTextAppearance="@style/edit_text_normal_hint"
+                    app:hintTextColor="?attr/colorEditTextHintFloat">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/icon_calendar"
+                        android:drawablePadding="10dp"
+                        android:focusable="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="?attr/colorEditTextFocusOutline"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="2dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/grey_rounded_border_bg"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="?attr/colorEditTextHint"
+                        android:text="@string/gender"/>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radioMale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:layout_marginEnd="15dp"
+                            app:buttonTint="?attr/colorEditTextFocusOutlineDisable"
+                            android:textColor="?attr/colorEditTextFocusOutlineDisable"
+                            android:text="@string/male"/>
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radioFemale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            app:buttonTint="?attr/colorEditTextFocusOutlineDisable"
+                            android:textColor="?attr/colorEditTextFocusOutlineDisable"
+                            android:text="@string/female"/>
+
+                    </RadioGroup>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddress"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="2dp"
+                    android:hint="@string/address"
+                    android:textColorHint="?attr/colorEditTextHint"
+                    app:boxStrokeColor="@color/edit_text_box_border"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:errorTextAppearance="@style/edit_text_error_hint"
+                    app:hintTextAppearance="@style/edit_text_normal_hint"
+                    app:hintTextColor="?attr/colorEditTextHintFloat">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top|start"
+                        android:inputType="textMultiLine"
+                        android:lines="3"
+                        android:maxLines="3"
+                        android:minLines="3"
+                        android:maxLength="196"
+                        android:scrollbars="vertical"
+                        android:text="@={viewModel.address}"
+                        android:textAlignment="viewStart"
+                        android:textColor="?attr/colorEditTextFocusOutline"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCountry"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="2dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/country"
+                    android:textColorHint="?attr/colorEditTextHint"
+                    app:boxStrokeColor="@color/edit_text_box_border"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:errorTextAppearance="@style/edit_text_error_hint"
+                    app:hintTextAppearance="@style/edit_text_normal_hint"
+                    app:hintTextColor="?attr/colorEditTextHintFloat">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCountry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:drawableStart="@drawable/icon_location"
+                        android:drawablePadding="10dp"
+                        android:focusable="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@={viewModel.country}"
+                        android:textAlignment="viewStart"
+                        android:textColor="?attr/colorEditTextFocusOutlineDisable"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            style="@style/Widget.MaterialComponents.Button"
+            android:theme="@style/Theme.MaterialComponents"
+            android:backgroundTint="?attr/colorDialogButtonLight"
+            android:textColor="@color/colorWhite"
+            android:text="@string/update"
+            app:cornerRadius="20dp"
+            android:textSize="16sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
